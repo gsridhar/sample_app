@@ -1,0 +1,24 @@
+
+
+  <%= @micropost.each do |m| %>
+
+<li>
+  <span class="content"><%= m.content %> <br>
+
+    reviewed by
+ <%=   link_to User.find_by_id(m.user_id).name, User.find_by_id(m.user_id) %>
+  </span>
+
+
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(m.created_at) %> ago.
+  </span>
+  <% if current_user?(m.user) %>
+    <%= link_to "delete", m, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: m.content %>
+  <% end %>
+
+</li>
+
+<%end%>

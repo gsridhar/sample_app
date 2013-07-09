@@ -10,7 +10,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem "debugger", "~> 1.6.1"
 group :development, :test do
  
   gem 'rspec-rails', '2.11.0'

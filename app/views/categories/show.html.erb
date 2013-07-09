@@ -1,0 +1,24 @@
+<% provide(:title, @category.productname) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+
+        <%= @category.productname %>
+      </h1>
+    </section>
+    
+    
+  </aside>
+  <div class="span8">
+  
+    <% if @category.microposts.any? %>
+      <h3>Reviews (<%= @category.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render 'microposts/micropost1' %>
+      </ol>
+      <%= will_paginate @micropost %>
+    <% end %>
+  </div>
+</div>
+
