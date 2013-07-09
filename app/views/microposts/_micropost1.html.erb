@@ -1,24 +1,22 @@
-
-
-  <%= @micropost.each do |m| %>
-<%= link_to gravatar_for(User.find_by_id(m.user_id) ), User.find_by_id(m.user_id)%>
-<li>
-  <span class="user">
-      <%= link_to User.find_by_id(m.user_id).name, User.find_by_id(m.user_id) %> 
+<% @micropost.each do |m| %>
+  <%= link_to gravatar_for(User.find_by_id(m.user_id) ), User.find_by_id(m.user_id)%>
+  <li>
+    <span class="user">
+        <%= link_to User.find_by_id(m.user_id).name, User.find_by_id(m.user_id) %> 
+      </span>
+    <span class="content"><%= m.content %>    
     </span>
-  <span class="content"><%= m.content %>    
-  </span>
 
 
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(m.created_at) %> ago.
-  </span>
-  <% if current_user?(m.user) %>
-    <%= link_to "delete", m, method: :delete,
-                                     data: { confirm: "You sure?" },
-                                     title: m.content %>
-  <% end %>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(m.created_at) %> ago.
+    </span>
+    <% if current_user?(m.user) %>
+      <%= link_to "delete", m, method: :delete,
+                                       data: { confirm: "You sure?" },
+                                       title: m.content %>
+    <% end %>
 
-</li>
-
+  </li>
 <%end%>
+

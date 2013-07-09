@@ -13,6 +13,10 @@ class CategoriesController < ApplicationController
   	    @micropost1.category_id=@category.category_id
   	 
 	end
+	def destroy
+     @category.destroy
+     redirect_back_or root_url
+    end
 
 	def fshow
 		@category = Category.find( params[:id] )

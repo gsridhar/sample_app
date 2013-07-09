@@ -1,5 +1,6 @@
 <li>
-  <span class="content"><%= micropost.content %> <br> on 
+  <span class="content"><%= micropost.content %> <br> 
+    <font color="blue">reviewed on </font> 
   	<%= link_to Category.find_by_category_id(micropost.category_id).productname, Category.find_by_category_id(micropost.category_id) %> 
 
   </span>
