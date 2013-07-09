@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
 		@user = User.all
   	    @micropost = @category.microposts.paginate(page: params[:page])
   	    @micropost1  = current_user.microposts.build
+  	    @micropost1.category_id=@category.category_id
   	 
 	end
 end
