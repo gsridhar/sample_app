@@ -15,7 +15,11 @@
   <div class="span8">
   
     <% if @category.microposts.any? %>
-      <h3>Reviews (<%= @category.microposts.count %>)</h3>
+      <h3>All Reviews (<%= @category.microposts.count %>)</h3>
+      <h4>For Followers reviews click 
+        <%= link_to 'here', {:controller => "static_pages", :action => "fshow" ,:id => @category.id}%></h4>
+
+
       <ol class="microposts">
         <%= render 'microposts/micropost1' %>
       </ol>

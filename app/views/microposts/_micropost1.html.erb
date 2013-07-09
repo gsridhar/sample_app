@@ -1,12 +1,12 @@
 
 
   <%= @micropost.each do |m| %>
-
+<%= link_to gravatar_for(User.find_by_id(m.user_id) ), User.find_by_id(m.user_id)%>
 <li>
-  <span class="content"><%= m.content %> <br>
-
-    reviewed by
- <%=   link_to User.find_by_id(m.user_id).name, User.find_by_id(m.user_id) %>
+  <span class="user">
+      <%= link_to User.find_by_id(m.user_id).name, User.find_by_id(m.user_id) %> 
+    </span>
+  <span class="content"><%= m.content %>    
   </span>
 
 
