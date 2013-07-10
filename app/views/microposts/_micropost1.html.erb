@@ -11,10 +11,11 @@
     <span class="timestamp">
       Posted <%= time_ago_in_words(m.created_at) %> ago.
     </span>
-    <% if current_user?(m.user) %>
-      <%= link_to "delete", m, method: :delete,
+    <% if current_user?(m.user) || current_user.admin %>
+     <font color="red"> <%= link_to "delete", m, method: :delete,
                                        data: { confirm: "You sure?" },
                                        title: m.content %>
+                                     </font>
     <% end %>
 
   </li>

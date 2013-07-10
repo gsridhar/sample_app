@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709055734) do
+ActiveRecord::Schema.define(:version => 20130710073036) do
 
   create_table "categories", :force => true do |t|
     t.integer  "category_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130709055734) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "productname"
+    t.string   "content"
   end
 
   create_table "microposts", :force => true do |t|

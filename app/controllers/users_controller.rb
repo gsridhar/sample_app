@@ -40,6 +40,8 @@ class UsersController < ApplicationController
 
   def index
     @users= User.paginate(page: params[:page])
+    @micropost  = Micropost.all
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def following
