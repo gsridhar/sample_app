@@ -2,7 +2,7 @@
   <%= link_to gravatar_for(feed_item.user), feed_item.user %>
     <span class="user">
       <%= link_to feed_item.user.name, feed_item.user %> reviewed 
-      <%= link_to Category.find_by_category_id(feed_item.category_id).productname, Category.find_by_category_id(feed_item.category_id) %> 
+      <%= link_to Category.find_by_id(feed_item.category_id).productname, Category.find_by_category_id(feed_item.category_id) %> 
       as
     </span>
     <span class="content"><%= feed_item.content %></span>
