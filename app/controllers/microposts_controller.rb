@@ -5,8 +5,7 @@ class MicropostsController < ApplicationController
   	end
 
   def create
-    debugger
-    1
+   
     @micropost = current_user.microposts.build(params[:micropost])
     
     if @micropost.save
@@ -19,8 +18,7 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-   debugger
-   0
+   
    Micropost.find(params[:id]).destroy
    flash.keep[:success] = "Micropost Deleted" 
    redirect_back_or root_url
